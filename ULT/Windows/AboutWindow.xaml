@@ -10,9 +10,6 @@
         <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,0,0,5">
             <TextBlock Text="ULT" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Foreground="{DynamicResource TextForegroundBrush}"/>
             <TextBlock x:Name="TxtVersion" FontSize="12" HorizontalAlignment="Center" Foreground="{DynamicResource TextForegroundBrush}" Opacity="0.7"/>
-            <Border x:Name="ActivationBadge" CornerRadius="4" HorizontalAlignment="Center" Padding="8,2">
-                <TextBlock x:Name="TxtActivationStatus" FontSize="11"/>
-            </Border>
         </StackPanel>
         <!-- Вкладки -->
         <TabControl Grid.Row="1">
