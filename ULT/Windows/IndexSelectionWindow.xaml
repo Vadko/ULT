@@ -1,0 +1,50 @@
+﻿<Window x:Class="ULT.IndexSelectionWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ULT" Title="Вибір індексів" Height="300" Width="400" WindowStartupLocation="CenterOwner" ResizeMode="NoResize"
+        Background="{DynamicResource WindowBackgroundBrush}">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,0,0,8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition x:Name="ColHeaderSep" Width="10"/>
+                <ColumnDefinition x:Name="ColHeaderTrans"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Name="LblPromptOrig" TextWrapping="Wrap" Foreground="{DynamicResource TextForegroundBrush}"/>
+            <TextBlock Grid.Column="2" Name="LblPromptTrans" TextWrapping="Wrap" Foreground="{DynamicResource TextForegroundBrush}"/>
+        </Grid>
+        <Grid Grid.Row="1" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition x:Name="ColListSep" Width="10"/>
+                <ColumnDefinition x:Name="ColListTrans"/>
+            </Grid.ColumnDefinitions>
+            <ListBox Grid.Column="0" Name="ListBoxOrig" SelectionChanged="ListBoxOrig_SelectionChanged" HorizontalContentAlignment="Stretch"
+                     Background="{DynamicResource DataGridBackgroundBrush}" Foreground="{DynamicResource TextForegroundBrush}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Padding="1" Foreground="{DynamicResource TextForegroundBrush}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox Grid.Column="2" Name="ListBoxTrans" SelectionChanged="ListBoxTrans_SelectionChanged" HorizontalContentAlignment="Stretch"
+                     Background="{DynamicResource DataGridBackgroundBrush}" Foreground="{DynamicResource TextForegroundBrush}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Padding="1" Foreground="{DynamicResource TextForegroundBrush}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+        <CheckBox Grid.Row="2" Name="ChkApplyToAll" Margin="0,0,0,10" Foreground="{DynamicResource TextForegroundBrush}" Visibility="Collapsed" 
+                  Content="Застосувати до всіх наступних JSON цього типу"/>
+        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="BtnOk" Content="Обрати" Height="25" Width="70" IsEnabled="False" Click="BtnOk_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
