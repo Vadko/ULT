@@ -14,11 +14,13 @@
 	  <Company>Hikaro</Company>
 	  <Product>ULT</Product>
 	  <Copyright>© Hikaro 2026</Copyright>
-	  <Version>1.0.4</Version>
-	  <FileVersion>1.0.4</FileVersion>
-	  <AssemblyVersion>1.0.4</AssemblyVersion>
+	  <Version>1.0.4-7</Version>
 	  <Authors>Hikaro</Authors>
 	  <AssemblyName>ULT</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(CIVersion)' != ''">
+    <Version>$(CIVersion)</Version>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
